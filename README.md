@@ -29,7 +29,7 @@ UWB(Ultra Wide Band)기반 실내 측위 방식 중 TDoA(Time Difference of Arri
 - 사전 연구들은 신호를 분해하여 AWGN이 제거된 깨끗한 신호를 얻고자 하지만, 많은 보정 프로세스를 거쳐 실시간으로 사용하기 힘들며, 실험 환경의 변화에 따라 성능이 강건하지 못한 단점을 가짐
 
 **연구 목적** 
-  - 다양한 공간에서 발생하는 AWGN에 대해 범용적으로 사용 가능한 강건한 모델 개발
+  - TDOA 이미지 변환으로 통한 다양한 공간에서 발생하는 AWGN에 대해 범용적으로 사용 가능한 강건한 모델 개발
   - 측정한 TDOA를 그대로 사용하는 간단한 프로세스의 end to end 모델 개발
   - 이동하는 물체를 실시간으로 추적하는 시계열 모델 개발
 
@@ -48,8 +48,16 @@ UWB(Ultra Wide Band)기반 실내 측위 방식 중 TDoA(Time Difference of Arri
 ![image](https://github.com/sean03101/UWB-Indoor-Tracking/assets/59594037/f6861350-7f5f-48c6-9321-abddc45894e1)
   
   - 3개 이상의 UWB 앵커와 1개의 태그를 사용해 얻은 TDOA들을 입력 값으로 설정
-  - TPITT(TDOA Probabilistic Image based moving-Target Tracking / **‘TDOA 이미지 시계열 데이터 변환 뒤, conv-lstm을 통한 물체의 위치 추적'**)를 통해 물체의 공간 좌표 벡터 추정
+  - TPITT(TDOA Probabilistic Image based moving-Target Tracking / **측정된 TDOA들을 ‘TDOA 이미지 시계열 데이터' 변환 뒤, conv-lstm을 통한 물체의 위치 추적**)를 통해 물체의 공간 좌표 벡터 추정
 
+![image](https://github.com/sean03101/UWB-Indoor-Tracking/assets/59594037/2cae4c0c-0fc5-4986-9fcf-8f43ccc9b1eb)
+
+  - 이미지 변환 인풋 : 이미지 변환 과정을 위해 앵커 2개 와 거기서 얻은 TDOA
+  - 이미지 변환시 필요한 하이퍼파라미터 : 공간 좌표 이미지 크기, 격자 크기, 최소 거리 차이 상수(ε / TDOA와 앵커와 격자 중점의 거리 차이 유사 비교 상수), temperature(T / sigmoid 함수의 출력 값을 보정하는 양수)
+  - 변환 과정
+      1) 행렬의 원소가 격자의 중점과 기준 앵커(anchor_ref)의 거리와 격자의 중점과 나머지 앵커(anchor_n)의 거리 차이의 절대값인 행렬 M 생성
+      2) sigmoid 함수를 이용해 행렬 M의 원소 smoothing 진행(이때, temperature 상수 T를 활용해 smoothing 정도를 조절 (𝐌_(𝐢,𝐣)=𝟏∕〖𝟏+𝐞^((|(𝐂_(𝐢,𝐣)−𝐀)−(𝐂_(𝐢,𝐣)−𝐀^′ )−𝐬|−𝛆)/𝐓) 〗)
+  - 해당 과정을 통해 실제 쌍곡선 방정식과 유사한, 이미지 내의 격점에 쌍곡선이 지나갈 확률로 표시된 TDOA 이미지 생성
 
 ### 참고 프로그램
 TDOA 측정 컴퓨터 시뮬레이션 프로그램 소스
