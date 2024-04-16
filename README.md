@@ -1,4 +1,4 @@
-# UWB-Indoor-Tracking
+# TDoA 확률화 이미지를 활용한 딥러닝 기반 타겟 추적 모델
 
 ### 
 [논문링크](https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11466181&googleIPSandBox=false&mark=0&ipRange=false&b2cLoginYN=false&aiChatView=A&readTime=10-15&isPDFSizeAllowed=true&accessgl=Y&language=ko_KR&hasTopBanner=true)
