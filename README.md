@@ -61,8 +61,7 @@ UWB(Ultra Wide Band)기반 실내 측위 방식 중 TDoA(Time Difference of Arri
 
 
   - Convolutional-LSTM 모델을 사용하여 물체의 공간 좌표에 대해 regression
-  - Loss 함수 : Mean Square Error(MSE)를 사용
-  - MSE=1/𝑁 ∑1_(𝑖=1)^𝑁▒〖(𝑦_𝑖−𝑦 ̂_𝑖)〗^2   (N : Dataset의 크기, y : 물체의 실제 공간 좌표, ŷ : 예측한 물체의 공간 좌표)
+  - Loss 함수 : Mean Square Error(MSE=1/𝑁 ∑1_(𝑖=1)^𝑁▒〖(𝑦_𝑖−𝑦 ̂_𝑖)〗^2   (N : Dataset의 크기, y : 물체의 실제 공간 좌표, ŷ : 예측한 물체의 공간 좌표))를 사용
 
 
 ### 실험
