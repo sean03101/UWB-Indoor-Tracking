@@ -42,6 +42,8 @@ UWB(Ultra Wide Band)기반 실내 측위 방식 중 TDoA(Time Difference of Arri
     3) 중앙 컴퓨팅 유닛(CCU)은 전체 UWB 앵커들의 데이터를 수집하여 각 앵커들 간 신호 도달시간 차이(TDOA)를 계산
     4) TDOA를 이용해 쌍곡선 방정식을 도출
     5) 방정식들의 해를 계산하여 UWB 태그의 위치를 추정
+
+    
 ![image](https://github.com/sean03101/UWB-Indoor-Tracking/assets/59594037/a3b9565c-1e63-42d3-80ba-184e28d93e9e)
 
 
