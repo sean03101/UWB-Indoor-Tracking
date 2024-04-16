@@ -43,9 +43,12 @@ UWB(Ultra Wide Band)기반 실내 측위 방식 중 TDoA(Time Difference of Arri
     4) TDOA를 이용해 쌍곡선 방정식을 도출
     5) 방정식들의 해를 계산하여 UWB 태그의 위치를 추정
 
-    
-![image](https://github.com/sean03101/UWB-Indoor-Tracking/assets/59594037/a3b9565c-1e63-42d3-80ba-184e28d93e9e)
 
+### 제안 모델
+![image](https://github.com/sean03101/UWB-Indoor-Tracking/assets/59594037/f6861350-7f5f-48c6-9321-abddc45894e1)
+  
+  - 3개 이상의 UWB 앵커와 1개의 태그를 사용해 얻은 TDOA들을 입력 값으로 설정
+  - TPITT(TDOA Probabilistic Image based moving-Target Tracking / **‘TDOA 이미지 시계열 데이터 변환 뒤, conv-lstm을 통한 물체의 위치 추적'**)를 통해 물체의 공간 좌표 벡터 추정
 
 
 ### 참고 프로그램
