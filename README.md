@@ -1,4 +1,4 @@
-![image](https://github.com/sean03101/UWB-Indoor-Tracking/assets/59594037/4aef63b7-9708-4c42-9e33-93e7b3201cfd)# UWB-Indoor-Tracking
+# UWB-Indoor-Tracking
 
 ### 
 [논문링크](https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11466181&googleIPSandBox=false&mark=0&ipRange=false&b2cLoginYN=false&aiChatView=A&readTime=10-15&isPDFSizeAllowed=true&accessgl=Y&language=ko_KR&hasTopBanner=true)
