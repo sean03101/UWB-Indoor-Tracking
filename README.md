@@ -115,4 +115,4 @@ TDOA 측정 컴퓨터 시뮬레이션 프로그램 소스
 - https://github.com/AlexisTM/MultilaterationTDOA
 
 ### 수상
-![image](/ppt & 논문/KakaoTalk_20240417_124511583.jpg)
+![image](/ppt_논문/KakaoTalk_20240417_124511583.jpg)
